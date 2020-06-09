@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping Student Experiences</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"
+    integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css"
+    integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<style>
+  body {
+    background-color: #2A6AD1;
+  }
+
+  body h1 {
+    color: white;
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  .col p {
+    color: white;
+  }
+
+  #map {
+    height: 700px;
+  }
+
+  button {
+    margin-left: 47%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>
+
+<body>
+  <h1>New College. New Experiences.</h1>
+  <div id="map"></div>
+  <div class="container-fluid">
+    <button type="button" class="btn btn-lg btn-light">Contribute</button>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar feugiat aliquet. Sed at dictum
+          nulla.
+          Phasellus hendrerit lectus pellentesque eleifend interdum. Maecenas sed vehicula ligula, in ultricies metus.
+          Cras sagittis pretium suscipit. Phasellus at nulla enim. Quisque congue dictum feugiat.
+          Morbi pretium posuere lectus, in ultricies nunc tristique sit amet. Vestibulum sed scelerisque nunc. Nulla a
+          nibh volutpat, dignissim lectus eu, blandit enim. Fusce a lacus odio. Vestibulum in auctor nisl. Nulla et enim
+          quis justo volutpat tempus. Duis sit amet venenatis purus. Quisque quis maximus urna, eu sagittis libero.
+          Vivamus in velit velit. Phasellus dictum quam ac odio tempor aliquam. Nullam non erat ut nunc tincidunt
+          dictum.
+          In ultrices dolor id leo finibus scelerisque suscipit nec sem. Fusce vestibulum velit ac lectus sollicitudin
+          sagittis. Integer sapien odio, laore</p>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+  <script>
+    var map = L.map('map').setView([39.82, -98.58], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href=" https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([39.82, -98.58]).addTo(map)
+      .bindPopup('A pop up. Student information displayed here.')
+      .openPopup();
+  </script>
+</body>
+</body>
+
+</html>
